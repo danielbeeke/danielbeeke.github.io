@@ -148,79 +148,7 @@ if (grid && header) {
 
       <h4 class="grid-title">About me</h4>
       <div class="about-me block" id="about-me">
-          <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Daniël Beeke | About</title>
-  <meta name="description" content="" />
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-</head>
-<body class="about">
-<script>
-
-if (!location.hash) {
-  document.body.classList.add('transition-in')
-}
-else {
-  document.body.classList.add('hash-in')
-}
-
-if (window.scrollY === 0) {
-  document.body.classList.add('at-top')
-}
-
-document.addEventListener('scroll', () => {
-  document.body.classList.remove('at-top')
-}, { once: true })
-
-if (location.pathname === '/') {
-  window.onbeforeunload = function () {
-    let scrollPos;
-    if (typeof window.pageYOffset != 'undefined') {
-      scrollPos = window.pageYOffset;
-    }
-    else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
-      scrollPos = document.documentElement.scrollTop;
-    }
-    else if (typeof document.body != 'undefined') {
-      scrollPos = document.body.scrollTop;
-    }
-    sessionStorage.scroll = scrollPos
-  }
-
-  window.onload = function () {
-    document.documentElement.scrollTop = parseInt(sessionStorage.scroll);
-    document.body.scrollTop = parseInt(sessionStorage.scroll);
-  }
-}
-
-const grid = document.querySelector('#projects-more')
-const header = document.querySelector('.show-more')
-
-if (grid && header) {
-  if (window.scrollY === 0) {
-    grid.classList.add('hidden')
-    header.innerText = 'Show more'
-  }
-  else {
-    header.innerText = 'Show less'
-  }
-}
-</script>
-    <nav class="menu">
-      <div class="inner">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </div>
-    </nav>
-    <article class="page full">
-      <h1 class="title">About</h1>
-      <div class="contents"><p><img src="/assets/daniel.jpeg" alt="Daniel Beeke"> From a young age I have always been interested in technology and creating things. Over the years this interest particularly grew in the area of software development. I have been doing that professionally for 15 years now.</p>
+          <p><img src="/assets/daniel.jpeg" alt="Daniel Beeke"> From a young age I have always been interested in technology and creating things. Over the years this interest particularly grew in the area of software development. I have been doing that professionally for 15 years now.</p>
 <h4 id="current-work">Current work</h4>
 <p>My job involves <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a>, <a href="https://deno.land/">Deno</a>, <a href="https://www.typescriptlang.org/">TypeScript</a> and a lot of media. It is for <a href="https://om.org">Operation Mobilisation</a>. I am also available for small sized contract jobs. </p>
 <h4 id="previous-work">Previous work</h4>
@@ -230,12 +158,7 @@ if (grid && header) {
 <p>I regularly give meetup talks about javascript things and have given talks about Drupal in the past. </p>
 <p>Most of the time I have a side project running. I always love learning something new.</p>
 <p>I like philosophy and the intersections of philosophy with the technical world, ethics and other things that are suitable for good talks with fine company.</p>
-</div>
-    </article>
 
-  <script src="/js/App.js" type="module"></script>
-</body>
-</html>
       </div>
 
       <h4 class="grid-title">Open Source</h4>
@@ -284,89 +207,12 @@ if (grid && header) {
 
       <h4 class="grid-title">Contact</h4>
       <div class="contact block" id="contact">
-          <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Daniël Beeke | Contact</title>
-  <meta name="description" content="" />
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-</head>
-<body class="contact">
-<script>
-
-if (!location.hash) {
-  document.body.classList.add('transition-in')
-}
-else {
-  document.body.classList.add('hash-in')
-}
-
-if (window.scrollY === 0) {
-  document.body.classList.add('at-top')
-}
-
-document.addEventListener('scroll', () => {
-  document.body.classList.remove('at-top')
-}, { once: true })
-
-if (location.pathname === '/') {
-  window.onbeforeunload = function () {
-    let scrollPos;
-    if (typeof window.pageYOffset != 'undefined') {
-      scrollPos = window.pageYOffset;
-    }
-    else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
-      scrollPos = document.documentElement.scrollTop;
-    }
-    else if (typeof document.body != 'undefined') {
-      scrollPos = document.body.scrollTop;
-    }
-    sessionStorage.scroll = scrollPos
-  }
-
-  window.onload = function () {
-    document.documentElement.scrollTop = parseInt(sessionStorage.scroll);
-    document.body.scrollTop = parseInt(sessionStorage.scroll);
-  }
-}
-
-const grid = document.querySelector('#projects-more')
-const header = document.querySelector('.show-more')
-
-if (grid && header) {
-  if (window.scrollY === 0) {
-    grid.classList.add('hidden')
-    header.innerText = 'Show more'
-  }
-  else {
-    header.innerText = 'Show less'
-  }
-}
-</script>
-    <nav class="menu">
-      <div class="inner">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </div>
-    </nav>
-    <article class="page full">
-      <h1 class="title">Contact</h1>
-      <div class="contents"><p>Thanks for viewing!
+          <p>Thanks for viewing!
 Do you want to know more?
 Let&#39;s talk!</p>
 <p><a href="tel:0031637346364">+31 6 37 34 63 64</a> / <a href="mail@danielbeeke.nl">mail@danielbeeke.nl</a></p>
 <p>VAT number: ATU77698207</p>
-</div>
-    </article>
 
-  <script src="/js/App.js" type="module"></script>
-</body>
-</html>
       </div>
 
     </article>
