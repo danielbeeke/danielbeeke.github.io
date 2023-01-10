@@ -6,62 +6,59 @@
   <meta name="description" content="" />
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head>
 <body class="projects/biblogos">
-  <script>
-    if (!location.hash) {
-      document.body.classList.add('transition-in')
+<script>
+
+if (!location.hash) {
+  document.body.classList.add('transition-in')
+}
+else {
+  document.body.classList.add('hash-in')
+}
+
+if (window.scrollY === 0) {
+  document.body.classList.add('at-top')
+}
+
+document.addEventListener('scroll', () => {
+  document.body.classList.remove('at-top')
+}, { once: true })
+
+if (location.pathname === '/') {
+  window.onbeforeunload = function () {
+    let scrollPos;
+    if (typeof window.pageYOffset != 'undefined') {
+      scrollPos = window.pageYOffset;
     }
-    else {
-      document.body.classList.add('hash-in')
+    else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
     }
-
-    if (window.scrollY === 0) {
-      document.body.classList.add('at-top')
+    else if (typeof document.body != 'undefined') {
+      scrollPos = document.body.scrollTop;
     }
+    sessionStorage.scroll = scrollPos
+  }
 
-    document.addEventListener('scroll', () => {
-      document.body.classList.remove('at-top')
-    }, { once: true })
+  window.onload = function () {
+    document.documentElement.scrollTop = parseInt(sessionStorage.scroll);
+    document.body.scrollTop = parseInt(sessionStorage.scroll);
+  }
+}
 
-    window.onbeforeunload = function () {
-            var scrollPos;
-            if (typeof window.pageYOffset != 'undefined') {
-                scrollPos = window.pageYOffset;
-            }
-            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
-                scrollPos = document.documentElement.scrollTop;
-            }
-            else if (typeof document.body != 'undefined') {
-                scrollPos = document.body.scrollTop;
-            }
-            document.cookie = "scrollTop=" + scrollPos + "URL=" + window.location.href;
-        }
+const grid = document.querySelector('#projects-more')
+const header = document.querySelector('.show-more')
 
-    window.onload = function () {
-        if (document.cookie.includes(window.location.href)) {
-            if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
-                var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
-                document.documentElement.scrollTop = parseInt(arr[1]);
-                document.body.scrollTop = parseInt(arr[1]);
-            }
-        }
-
-        const grid = document.querySelector('#projects-more')
-        const header = document.querySelector('.show-more')
-
-        if (grid && header) {
-          if (window.scrollY === 0) {
-            grid.classList.add('hidden')
-            header.innerText = 'Show more'
-          }
-          else {
-            header.innerText = 'Show less'
-          }
-        }
-
-    }
-
+if (grid && header) {
+  if (window.scrollY === 0) {
+    grid.classList.add('hidden')
+    header.innerText = 'Show more'
+  }
+  else {
+    header.innerText = 'Show less'
+  }
+}
 </script>
 
     <nav class="menu">

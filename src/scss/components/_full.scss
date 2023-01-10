@@ -20,7 +20,8 @@
 
         img {
             clear: both;
-            max-width: 600px;
+            // max-width: 50%;
+            max-width: 100%;
             margin-block: 4em;
         }
 
@@ -145,6 +146,10 @@
         }
 
         .contents {
+            img {
+                max-width: 40%;
+            }
+
             .title, .description {
                 max-width: calc(100% - 460px);
             }
@@ -152,6 +157,16 @@
 
         .meta-close {
             top: 2em;
+        }
+    }
+}
+
+@media (min-width: 120px) {
+    .full {
+        .contents {
+            img {
+                max-width: 60%;
+            }
         }
     }
 }
