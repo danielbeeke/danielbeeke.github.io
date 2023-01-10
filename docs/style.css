@@ -442,7 +442,7 @@ body.at-top .introduction .inner {
   line-height: 1.7;
   margin-bottom: 200px;
 }
-.block img {
+.block p > img {
   display: block;
   max-width: 100%;
   margin-bottom: 2em;
@@ -464,7 +464,7 @@ body.at-top .introduction .inner {
   .block {
     font-size: 1.3em;
   }
-  .block img {
+  .block p > img {
     float: right;
     max-width: 300px;
     margin-left: 4em !important;
