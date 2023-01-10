@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daniël Beeke | Haringvliet</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body class="projects/haringvliet">
+  <script>
+    if (!location.hash) {
+      document.body.classList.add('transition-in')
+    }
+    else {
+      document.body.classList.add('hash-in')
+    }
+
+    if (window.scrollY === 0) {
+      document.body.classList.add('at-top')
+    }
+
+    document.addEventListener('scroll', () => {
+      document.body.classList.remove('at-top')
+    }, { once: true })
+
+    window.onbeforeunload = function () {
+            var scrollPos;
+            if (typeof window.pageYOffset != 'undefined') {
+                scrollPos = window.pageYOffset;
+            }
+            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+                scrollPos = document.documentElement.scrollTop;
+            }
+            else if (typeof document.body != 'undefined') {
+                scrollPos = document.body.scrollTop;
+            }
+            document.cookie = "scrollTop=" + scrollPos + "URL=" + window.location.href;
+        }
+
+    window.onload = function () {
+        if (document.cookie.includes(window.location.href)) {
+            if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+                var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
+                document.documentElement.scrollTop = parseInt(arr[1]);
+                document.body.scrollTop = parseInt(arr[1]);
+            }
+        }
+
+        const grid = document.querySelector('#projects-more')
+        const header = document.querySelector('.show-more')
+
+        if (grid && header) {
+          if (window.scrollY === 0) {
+            grid.classList.add('hidden')
+            header.innerText = 'Show more'
+          }
+          else {
+            header.innerText = 'Show less'
+          }
+        }
+
+    }
+
+</script>
+
+    <nav class="menu">
+      <div class="inner">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <article class="project full">
+
+      <img class="background" src="//images.weserv.nl/?url=https://stadaardgasvrij.nl/wp-content/uploads/2019/12/shutterstock_663239590-scaled.jpg&w=1200&h=700&fit=cover&a=attention" />
+      <a href="/" class="meta-close"></a>
+    
+      <div class="contents">
+
+        <h1 class="title">Haringvliet</h1>
+        <h2 class="description">Interactive carthography</h2>
+
+        <div class="meta">
+
+          <div class="item">
+            <label class="label">Role</label>
+            <span class="value">Developer</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Type</label>
+            <span class="value">With Fonkel and Graphius</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Technologies</label>
+            <span class="value">Leaflet, CartoCSS, ES6</span>
+          </div>
+
+          <div class="item">
+            <label class="label">When</label>
+            <span class="value">2018</span>
+          </div>
+          
+
+        </div>
+  
+        <p>A dozen of organisations from the Netherlands have bundled forces to advance and develop a region. This region has a lot of beautiful nature.</p>
+<p>Our task was to create a news / blog website with an interactive map.</p>
+<p>We did this in three iterations.</p>
+<ul>
+<li>We built the website with news, blogs and some project information.</li>
+<li>Then we built a first version of the map, with a map drawn by an illustrator.</li>
+<li>Then we made the map as shown in this showcase.</li>
+</ul>
+<p><video src="/assets/haringvliet.webm" autoplay controls></video></p>
+
+      </div>
+    </article>
+
+  <script src="/js/App.js" type="module"></script>
+</body>
+</html>

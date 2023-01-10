@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daniël Beeke | Window insulation</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body class="projects/window-insulation">
+  <script>
+    if (!location.hash) {
+      document.body.classList.add('transition-in')
+    }
+    else {
+      document.body.classList.add('hash-in')
+    }
+
+    if (window.scrollY === 0) {
+      document.body.classList.add('at-top')
+    }
+
+    document.addEventListener('scroll', () => {
+      document.body.classList.remove('at-top')
+    }, { once: true })
+
+    window.onbeforeunload = function () {
+            var scrollPos;
+            if (typeof window.pageYOffset != 'undefined') {
+                scrollPos = window.pageYOffset;
+            }
+            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+                scrollPos = document.documentElement.scrollTop;
+            }
+            else if (typeof document.body != 'undefined') {
+                scrollPos = document.body.scrollTop;
+            }
+            document.cookie = "scrollTop=" + scrollPos + "URL=" + window.location.href;
+        }
+
+    window.onload = function () {
+        if (document.cookie.includes(window.location.href)) {
+            if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+                var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
+                document.documentElement.scrollTop = parseInt(arr[1]);
+                document.body.scrollTop = parseInt(arr[1]);
+            }
+        }
+
+        const grid = document.querySelector('#projects-more')
+        const header = document.querySelector('.show-more')
+
+        if (grid && header) {
+          if (window.scrollY === 0) {
+            grid.classList.add('hidden')
+            header.innerText = 'Show more'
+          }
+          else {
+            header.innerText = 'Show less'
+          }
+        }
+
+    }
+
+</script>
+
+    <nav class="menu">
+      <div class="inner">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <article class="project full">
+
+      <img class="background" src="//images.weserv.nl/?url=https://danielbeeke.nl/images/showcase-background-big/kozijnisolatie.jpg&w=1200&h=700&fit=cover&a=attention" />
+      <a href="/" class="meta-close"></a>
+    
+      <div class="contents">
+
+        <h1 class="title">Window insulation</h1>
+        <h2 class="description">Calculation tool for carpentry shops</h2>
+
+        <div class="meta">
+
+          <div class="item">
+            <label class="label">Role</label>
+            <span class="value">Developer</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Type</label>
+            <span class="value">With Fonkel and Graphius</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Technologies</label>
+            <span class="value">JavaScript, Google Sheets, Redux, uHTML, RemoteStorage</span>
+          </div>
+
+          
+
+        </div>
+  
+        <p>The dutch branch organization for carpentry factories, NBvT has a lot of members that need to do a lot of difficult calculations to show how much warmth gets lost in their wooden constructions. They need to tell their customers how much warmth their wooden doors, frames and windows let through.</p>
+<p>This tool helps them by supplying a user interface in which they can build the whole frame digitally and set all the right parameters. With that input the tool calculates how much warmth the customer will lose.</p>
+<p>The tool needs to know a few basic settings, like the wood type that will be used and the sizes of the frame. This screen we built together with the technical product owner, he explained a lot of things that we needed to learn about windows and doors.</p>
+<p><video src="/assets/kozijnisolatie.webm" autoplay controls></video></p>
+<p>Some technical information: this whole tool runs inside the browser of the user. It is super fast because of that. The tools saves the data in the NBvT’s website. It does that in a fully decoupled way. A project is exported to a text definition in JSON format and that is saved in the user’s account.</p>
+<p><img src="/assets/kozijnisolatie-1.png" alt="Kozijnisolatie"></p>
+<p>One of the difficult things in this project was building things that we have never build before. You need to have a model that matches the reality or at least a simplification that works for the use case.</p>
+<p>Creating the grid and the validation for it was interesting. Inserting rows after initiating the grid, removing columns, checking for incomplete squares, all things that needed small algorithms.</p>
+<p><img src="/assets/kozijnisolatie-2.png" alt="Kozijnisolatie"></p>
+<p>The next step involves changes the different lines of the grid so it has the right dimensions. After that we can continue to fill it up with doors, windows and wood panels.</p>
+<p>All those lines where the sizes are shown are calculated and drawn with code.</p>
+<p><img src="/assets/kozijnisolatie-3.png" alt="Kozijnisolatie"></p>
+<p>All the images of doors and windows are drawn with code. Each part that is used in the calculation, like a metal strip or a piece of wood has dimensions and is drawable. For example, a window inside a door is a piece with dimensions.
+A lot of things are adjustable, how thick the wood needs to be, the wood type, the aluminium type and a lot more!</p>
+<p>Every piece of the wooden frame has a settings form. In that form you can tell how thick the wood or glass is. You have project defaults as shown right in the image above that you can override. The drawing is on scale. It is a SVG with the real sizes, but in points.</p>
+<p>The last step shows the results. It does that with expandable details. The user can download a PDF to give to the customer.</p>
+<p>In the last step it is also possible to check what would be different when you would use a different kind of wood.</p>
+
+      </div>
+    </article>
+
+  <script src="/js/App.js" type="module"></script>
+</body>
+</html>

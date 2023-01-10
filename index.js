@@ -27,10 +27,14 @@ Handlebars.registerHelper('limit', function (arr, offset, limit) {
   return arr.slice(offset, offset + limit)
 });
 
+
+const build = process.argv[2] === '--prod'
+
+
 Metalsmith('./')
 .source('./src')
-.destination('./build')
-.use(serve({
+.destination(build ? './docs' : './build')
+.use(build ? () => null : serve({
   port: 5000
 }))
 .use(assets({
@@ -83,7 +87,7 @@ Metalsmith('./')
   pattern: "**/*.html"
 }))
 .use(skip())
-.use(browserSync({
+.use(build ? () => null : browserSync({
   server : 'build',
   files  : [
     'src/js/*', 

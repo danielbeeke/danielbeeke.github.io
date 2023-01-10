@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daniël Beeke | FRM</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body class="projects/frm">
+  <script>
+    if (!location.hash) {
+      document.body.classList.add('transition-in')
+    }
+    else {
+      document.body.classList.add('hash-in')
+    }
+
+    if (window.scrollY === 0) {
+      document.body.classList.add('at-top')
+    }
+
+    document.addEventListener('scroll', () => {
+      document.body.classList.remove('at-top')
+    }, { once: true })
+
+    window.onbeforeunload = function () {
+            var scrollPos;
+            if (typeof window.pageYOffset != 'undefined') {
+                scrollPos = window.pageYOffset;
+            }
+            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+                scrollPos = document.documentElement.scrollTop;
+            }
+            else if (typeof document.body != 'undefined') {
+                scrollPos = document.body.scrollTop;
+            }
+            document.cookie = "scrollTop=" + scrollPos + "URL=" + window.location.href;
+        }
+
+    window.onload = function () {
+        if (document.cookie.includes(window.location.href)) {
+            if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+                var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
+                document.documentElement.scrollTop = parseInt(arr[1]);
+                document.body.scrollTop = parseInt(arr[1]);
+            }
+        }
+
+        const grid = document.querySelector('#projects-more')
+        const header = document.querySelector('.show-more')
+
+        if (grid && header) {
+          if (window.scrollY === 0) {
+            grid.classList.add('hidden')
+            header.innerText = 'Show more'
+          }
+          else {
+            header.innerText = 'Show less'
+          }
+        }
+
+    }
+
+</script>
+
+    <nav class="menu">
+      <div class="inner">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <article class="project full">
+
+      <img class="background" src="//images.weserv.nl/?url=https://images.unsplash.com/photo-1450101499163-c8848c66ca85&w=1200&h=700&fit=cover&a=attention" />
+      <a href="/" class="meta-close"></a>
+    
+      <div class="contents">
+
+        <h1 class="title">FRM</h1>
+        <h2 class="description">Linked Data forms from validation rules</h2>
+
+        <div class="meta">
+
+          <div class="item">
+            <label class="label">Role</label>
+            <span class="value">Creator</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Type</label>
+            <span class="value">Open Source Project</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Technologies</label>
+            <span class="value">RDF, SHACL, TypeScript</span>
+          </div>
+
+          <div class="item">
+            <label class="label">When</label>
+            <span class="value">2022</span>
+          </div>
+          
+
+          <div class="item">
+            <a href="https://github.com/danielbeeke/frm" class="button view-source" target="_blank">View code</a>
+          </div>
+        </div>
+  
+        <p>What if a system existed where you could use whatever piece of data and it would generate a form that could be used to edit that piece of data, or create a variant of it. With FRM that will be possible in the future. </p>
+<p>Think of FRM as a form system, an advanced one. It can have address search fields for example. It can also group together fields when needed. What makes FRM different from other form systems that it is completely detached from backend systems. It uses <a href="https://www.w3.org/TR/shacl/">SHACL</a> to define forms. You can think of SHACL as a set of validation rules for a piece of data. FRM derives the form widgets from these validations rules. You can also add specific rules that only FRM understand, such a specific widget or widget setting.</p>
+<p><img src="/assets/frm.png" alt="FRM"></p>
+
+      </div>
+    </article>
+
+  <script src="/js/App.js" type="module"></script>
+</body>
+</html>

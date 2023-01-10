@@ -2,7 +2,8 @@
   "name": "danielbeeke.nl",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"nodemon --watch src --ext md,hbs,html index.js\" \"npx netlify-cms-proxy-server\""
+    "start": "concurrently \"nodemon --watch src --ext md,hbs,html index.js\" \"npx netlify-cms-proxy-server\"",
+    "build": "node index.js --prod"
   },
   "type": "module",
   "devDependencies": {

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daniël Beeke | LightNet</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body class="projects/lightnet">
+  <script>
+    if (!location.hash) {
+      document.body.classList.add('transition-in')
+    }
+    else {
+      document.body.classList.add('hash-in')
+    }
+
+    if (window.scrollY === 0) {
+      document.body.classList.add('at-top')
+    }
+
+    document.addEventListener('scroll', () => {
+      document.body.classList.remove('at-top')
+    }, { once: true })
+
+    window.onbeforeunload = function () {
+            var scrollPos;
+            if (typeof window.pageYOffset != 'undefined') {
+                scrollPos = window.pageYOffset;
+            }
+            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+                scrollPos = document.documentElement.scrollTop;
+            }
+            else if (typeof document.body != 'undefined') {
+                scrollPos = document.body.scrollTop;
+            }
+            document.cookie = "scrollTop=" + scrollPos + "URL=" + window.location.href;
+        }
+
+    window.onload = function () {
+        if (document.cookie.includes(window.location.href)) {
+            if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+                var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
+                document.documentElement.scrollTop = parseInt(arr[1]);
+                document.body.scrollTop = parseInt(arr[1]);
+            }
+        }
+
+        const grid = document.querySelector('#projects-more')
+        const header = document.querySelector('.show-more')
+
+        if (grid && header) {
+          if (window.scrollY === 0) {
+            grid.classList.add('hidden')
+            header.innerText = 'Show more'
+          }
+          else {
+            header.innerText = 'Show less'
+          }
+        }
+
+    }
+
+</script>
+
+    <nav class="menu">
+      <div class="inner">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <article class="project full">
+
+      <img class="background" src="//images.weserv.nl/?url=https://images.unsplash.com/photo-1451187580459-43490279c0fa&w=1200&h=700&fit=cover&a=attention" />
+      <a href="/" class="meta-close"></a>
+    
+      <div class="contents">
+
+        <h1 class="title">LightNet</h1>
+        <h2 class="description">Media catalog and app publisher for Christian ministries and churches</h2>
+
+        <div class="meta">
+
+          <div class="item">
+            <label class="label">Role</label>
+            <span class="value">Developer</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Type</label>
+            <span class="value">Current day job</span>
+          </div>
+
+          <div class="item">
+            <label class="label">Technologies</label>
+            <span class="value">TypeScript, RDF, Deno, NodeJS, SCSS, PWA</span>
+          </div>
+
+          <div class="item">
+            <label class="label">When</label>
+            <span class="value">2020 till present</span>
+          </div>
+          
+          <div class="item">
+            <a href="https://library.mediaworks.global/en" class="button view-online" target="_blank">View online</a>
+          </div>
+
+        </div>
+  
+        <p>LightNet is my day to day job. In a small group, we are creating LightNet. LightNet is a tool for Christian ministries and (starting) churches to easily create webapps for their target audience. These webapps consist of a Spotify like interface where you have a media catalog (video, eBooks, flyers at the moment) and the end user can save these for offline usage and read / view them.</p>
+<p>The idea is that organizations have their own instance of LightNet. It will be possible in the future to connect these instances to eachother. This is done with something that looks like <a href="https://en.wikipedia.org/wiki/Object-capability_model">object capabilities</a>. We call this concept behind these connections Federation. It is somewhat similar to the fediverse and Mastadon. The main difference is that we will have a pull mechanism for data fetching, where the fediverse (ActivitPub) has a push mechanism.</p>
+<p><video src="/assets/lightnet-channel-viewer.webm" autoplay controls></video></p>
+
+      </div>
+    </article>
+
+  <script src="/js/App.js" type="module"></script>
+</body>
+</html>

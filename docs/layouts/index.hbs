@@ -1,0 +1,51 @@
+{{#extend "html"}}
+
+  {{#content "body"}}
+    {{> menu }}
+
+    <article class="full front">  
+      {{> introduction }}
+
+
+      <h4 class="grid-title">Projects</h4>
+      <div class="projects grid" id="projects">
+        {{#each (limit collections.projects 0 4) }}
+          {{> project.teaser }}
+        {{/each}}
+      </div>
+
+      <div class="projects-more grid" id="projects-more">
+        {{#each (limit collections.projects 4 100) }}
+          {{> project.teaser }}
+        {{/each}}
+      </div>
+
+      <div class="show-more-wrapper">
+        <button class="show-more">Show more</button>
+      </div>
+
+      <h4 class="grid-title">About me</h4>
+      <div class="about-me block" id="about-me">
+        {{#page "about"}}
+          {{{ contents }}}
+        {{/page}}
+      </div>
+
+      <h4 class="grid-title">Open Source</h4>
+      <div class="open-source block" id="open-source">
+        {{#page "open-source"}}
+          {{{ contents }}}
+        {{/page}}
+      </div>
+
+      <h4 class="grid-title">Contact</h4>
+      <div class="contact block" id="contact">
+        {{#page "contact"}}
+          {{{ contents }}}
+        {{/page}}
+      </div>
+
+    </article>
+  {{/content}}
+  
+{{/extend}}
