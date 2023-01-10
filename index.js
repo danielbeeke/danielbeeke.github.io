@@ -97,6 +97,6 @@ Metalsmith('./')
     'src/scss/*.scss'
   ]
 }))
-.use(report('stage 1'))
+.use(build ? () => null : report('stage 1'))
 .clean(true)
 .build()
