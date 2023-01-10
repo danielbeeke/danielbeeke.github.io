@@ -1,0 +1,12 @@
+{{#extend "html"}}
+
+  {{#content "body"}}
+    {{> menu }}
+
+    <article class="page full">
+      <h1 class="title">{{ title }}</h1>
+      <div class="contents">{{{ contents }}}</div>
+    </article>
+  {{/content}}
+  
+{{/extend}}

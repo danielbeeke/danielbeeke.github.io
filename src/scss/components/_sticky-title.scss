@@ -1,0 +1,19 @@
+.sticky-title {
+    position: fixed;
+    font-size: 20em;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    color: rgba(white, .04);
+    font-family: var(--serif);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+    
+    &.visible {
+        opacity: 1;
+    }
+}

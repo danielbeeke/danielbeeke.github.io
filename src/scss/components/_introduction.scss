@@ -1,0 +1,49 @@
+.introduction {
+    flex: 1 1 auto;
+    width: 100%;
+    display: block;
+    min-height: calc(100vh - 140px);
+    position: relative;
+    max-width: var(--max-width);
+
+    .wrapper {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner {
+        font-weight: 900;
+        color: var(--accent);
+        display: inline-block;
+        flex-direction: column;
+        text-align: left;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        line-height: 1.9em;
+        width: 100%;
+        font-family: var(--sans);
+    }
+
+    .name {
+        font-weight: 900;
+        line-height: 1.1em;
+        font-size: 1.8em;
+        color: var(--accent2);
+    }
+}
+
+body.at-top {
+    .introduction .inner {
+        animation: fadeIn .6s .6s both;
+    }
+}
+
+@media (min-width: 720px) {
+    .introduction .inner {
+        font-size: 1.6em;
+        line-height: 1.9em;
+    }
+}

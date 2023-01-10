@@ -1,0 +1,45 @@
+.project.full {
+    .background {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        z-index: -1;
+        pointer-events: none;
+        object-fit: cover;
+    }
+
+    > *:not(.background) {
+        transform: translateY(0);
+    }
+
+    .transition-in & {
+        .background {
+            animation: backgroundFadeOut 1s ease-in-out both;
+        }
+    
+        > *:not(.background) {
+            animation: fadeIn 1s .5s ease-in-out both;
+        }
+    }
+
+    .transition-out & {
+        .background {
+            animation: backgroundFadeIn 1s .5s ease-in-out both;
+        }
+    
+        > *:not(.background) {
+            animation: fadeOut 1s ease-in-out both;
+        }
+    }
+}
+
+@keyframes backgroundFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: .1; }
+}
+
+@keyframes backgroundFadeIn {
+    0% { opacity: .1; }
+    100% { opacity: 1; }
+}

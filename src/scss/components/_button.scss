@@ -1,0 +1,15 @@
+a.button, button.button, .button {
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 4px 14px;
+    color: white !important;
+    background-color: rgba(black, .2);
+    font-size: 1em;
+    border: 2px solid white;
+    transition: background-color .3s ease-in-out;
+
+    &:hover {
+        background-color: rgba(black, .5);
+    }
+}

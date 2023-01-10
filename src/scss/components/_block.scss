@@ -1,0 +1,41 @@
+.block {
+    max-width: var(--max-width);
+    font-size: 1.1em;
+    width: 100%;
+    line-height: 1.7;
+    margin-bottom: 200px;
+
+    img {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 2em;
+        border-radius: 5px;
+        box-shadow: 0 0 45px 0 black;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    h4 {
+        margin-top: 2em;
+        margin-bottom: .5em;
+        font-weight: 300;
+        color: var(--accent);
+        // font-style: italic;
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width: 720px) {
+    .block {
+        font-size: 1.3em;
+
+        img {
+            float: right;
+            max-width: 300px;
+            margin-left: 4em !important;
+            margin-bottom: 3em !important;   
+        }
+    }
+}

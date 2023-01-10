@@ -1,0 +1,65 @@
+{{#extend "html"}}
+
+  {{#content "body"}}
+
+    {{> menu }}
+
+    <article class="project full">
+
+      <img class="background" src="//images.weserv.nl/?url={{ poster }}&w=1200&h=700&fit=cover&a=attention" />
+      <a href="/" class="meta-close"></a>
+    
+      <div class="contents">
+
+        <h1 class="title">{{ title }}</h1>
+        <h2 class="description">{{ description }}</h2>
+
+        <div class="meta">
+
+          {{#if role }}
+          <div class="item">
+            <label class="label">Role</label>
+            <span class="value">{{ role }}</span>
+          </div>
+          {{/if}}
+
+          {{#if type }}
+          <div class="item">
+            <label class="label">Type</label>
+            <span class="value">{{ type }}</span>
+          </div>
+          {{/if}}
+
+          {{#if tech }}
+          <div class="item">
+            <label class="label">Technologies</label>
+            <span class="value">{{ tech }}</span>
+          </div>
+          {{/if}}
+
+          {{#if when }}
+          <div class="item">
+            <label class="label">When</label>
+            <span class="value">{{ when }}</span>
+          </div>
+          {{/if}}
+          
+          {{#if link }}
+          <div class="item">
+            <a href="{{ link }}" class="button view-online" target="_blank">View online</a>
+          </div>
+          {{/if}}
+
+          {{#if repo }}
+          <div class="item">
+            <a href="{{ repo }}" class="button view-source" target="_blank">View code</a>
+          </div>
+          {{/if}}
+        </div>
+  
+        {{{ contents }}}
+      </div>
+    </article>
+  {{/content}}
+  
+{{/extend}}
