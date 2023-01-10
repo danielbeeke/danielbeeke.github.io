@@ -47,7 +47,7 @@ const expandElement = (element, reverse, callback) => {
 
             setTimeout(() => {
                 clonedElement.remove()
-            }, 100)
+            }, 600)
         }, { once: true })
 
         let { before, after } = getPositions(element, reverse)
