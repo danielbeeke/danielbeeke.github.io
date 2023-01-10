@@ -42,12 +42,12 @@ const expandElement = (element, reverse, callback) => {
         document.body.classList.remove('hash-in')
 
         clonedElement.addEventListener('transitionend', () => {
-            document.body.classList.remove('scroll-lock')
             if (callback) callback()
 
             setTimeout(() => {
+                document.body.classList.remove('scroll-lock')
                 clonedElement.remove()
-            }, 600)
+            }, 300)
         }, { once: true })
 
         let { before, after } = getPositions(element, reverse)
