@@ -96,6 +96,44 @@ h4 {
   font-family: var(--sans);
 }
 
+iframe {
+  width: 100%;
+  border: none;
+  aspect-ratio: 16/9;
+  margin: 0 0 3em;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1.7;
+  border-left: 5px solid var(--accent);
+  padding-left: 1em;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  table-layout: fixed;
+  background: rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+table td, table th:not(:empty) {
+  padding: 0.5em;
+}
+table tr:not(:last-child) td,
+table th:not(:empty) {
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+pre {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.8em !important;
+  line-height: 1.6em;
+}
+
 .menu {
   display: none;
 }
@@ -195,6 +233,8 @@ body.at-top .grid, body.at-top .grid-title {
   font-size: 2em;
   line-height: 1.5em;
   margin-top: 1em;
+  width: 100%;
+  max-width: var(--max-width);
   font-weight: 900;
 }
 .full .description {
@@ -591,4 +631,19 @@ a.button:hover, button.button:hover, .button:hover {
 .open-source em {
   font-size: 0.8em;
   line-height: 0.9em;
+}
+
+.blogs {
+  margin-bottom: 200px;
+}
+
+.blog.teaser {
+  text-decoration: none;
+}
+.blog.teaser .title {
+  font-size: 1.7em;
+  margin: 0;
+}
+.blog.teaser .published-date {
+  color: var(--accent2);
 }

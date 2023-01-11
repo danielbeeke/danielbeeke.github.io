@@ -41,6 +41,10 @@ Metalsmith('./')
   projects: { 
     pattern: 'projects/*.md',
     sortBy: 'index'
+  },
+  blogs: { 
+    pattern: 'blogs/*.md',
+    sortBy: 'date'
   }
 }))
 .use(assets({
@@ -71,6 +75,10 @@ Metalsmith('./')
     {
       match: { collection: 'projects' },
       pattern: 'projects/:title',
+    },
+    {
+      match: { collection: 'blogs' },
+      pattern: 'blogs/:title',
     },
     {
       match: { collection: 'pages' },

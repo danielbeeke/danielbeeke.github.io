@@ -90,3 +90,43 @@ h4 {
   font-family: var(--sans);
 
 }
+
+iframe {
+  width: 100%;
+  border: none;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 3em;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1.7;
+  border-left: 5px solid var(--accent);
+  padding-left: 1em;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  table-layout: fixed;
+  background: rgba(white, .1);
+  overflow-x: auto;
+
+  td, th:not(:empty) {
+    padding: .5em;
+  }
+
+  tr:not(:last-child) td,
+  th:not(:empty) {
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+}
+
+pre {
+  padding: 1em;
+  background: rgba(white, .1);
+  font-size: .8em !important;
+  line-height: 1.6em;
+}

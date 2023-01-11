@@ -1,0 +1,13 @@
+{{#extend "html"}}
+
+  {{#content "body"}}
+    <article class="blog full">
+      <h1 class="title">{{ title }}</h1>
+      <div class="contents">
+        <span>Published on {{ date }}</span>
+        {{{ markdown }}}
+      </div>
+    </article>
+  {{/content}}
+  
+{{/extend}}
