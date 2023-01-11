@@ -1,5 +1,5 @@
 ---
-title: New Year; More Open Source!
+title: New Year; More Open Source
 date: 2023-01-11
 layout: blog.hbs
 ---
