@@ -62,9 +62,7 @@ Metalsmith('./')
   }
 }))
 .use(markdown())
-.use(excerpts({
-  multipleFormats: true
-}))
+.use(excerpts())
 .use(permalinks({
   pattern: ':title',
   relative: false,
