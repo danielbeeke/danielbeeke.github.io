@@ -192,7 +192,7 @@ body.at-top .grid, body.at-top .grid-title {
 .full .title {
   font-family: var(--sans);
   color: var(--accent);
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.5em;
   margin-top: 1em;
   font-weight: 900;
@@ -205,7 +205,7 @@ body.at-top .grid, body.at-top .grid-title {
   color: var(--accent2);
 }
 .full .meta {
-  font-size: 0.9em;
+  font-size: 0.8em;
   padding: 2em;
   border-radius: 5px;
   color: var(--accent2);
@@ -395,6 +395,7 @@ body.at-top .introduction .inner {
   font-style: italic;
   color: var(--text);
   margin-bottom: 1.4em;
+  display: block;
 }
 .project.teaser:after {
   content: "";

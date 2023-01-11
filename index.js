@@ -11,7 +11,6 @@ import dateFormatter from 'metalsmith-date-formatter'
 import Handlebars from 'handlebars'
 import HandlebarsLayouts from 'handlebars-layouts'
 import browserSync from 'metalsmith-browser-sync'
-import excerpts from '@metalsmith/excerpts'
 import { report } from 'metalsmith-debug-ui'
 import { skip } from './metalsmith/skip.js'
 
@@ -37,6 +36,13 @@ Metalsmith('./')
 .use(build ? () => null : serve({
   port: 5000
 }))
+.use(collections({
+  pages: { pattern: 'pages/*.md' },
+  projects: { 
+    pattern: 'projects/*.md',
+    sortBy: 'index'
+  }
+}))
 .use(assets({
   source: './src/public',
   destination: './'
@@ -54,15 +60,8 @@ Metalsmith('./')
   directory: 'src/partials',
 }))
 .use(sass())
-.use(collections({
-  pages: { pattern: 'pages/*.md' },
-  projects: { 
-    pattern: 'projects/*.md',
-    sortBy: 'index'
-  }
-}))
+
 .use(markdown())
-.use(excerpts())
 .use(permalinks({
   pattern: ':title',
   relative: false,

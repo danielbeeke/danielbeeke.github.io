@@ -4,7 +4,10 @@ layout: page.hbs
 skip: true
 ---
 
-You can sponsor me so that I can do more Open Source work. It is also possible to make known which issues you want to see solved. Contact me for requests.
+You can sponsor me so that I can do more Open Source work. 
+
+It is also possible to make known which issues you want to see solved. <br>
+Contact me for requests.
 
 ### I am open to the following Open Source work:
 

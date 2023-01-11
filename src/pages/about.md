@@ -8,7 +8,7 @@ skip: true
 
 ### Current work
 
-My job involves [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework), [Deno](https://deno.land/), [TypeScript](https://www.typescriptlang.org/) and a lot of media. It is for [Operation Mobilisation](https://om.org). I am also available for small sized contract jobs. 
+My job involves [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework), [Deno](https://deno.land/), [TypeScript](https://www.typescriptlang.org/) and a lot of media. It is for [Operation Mobilisation](https://om.org). I am also available for small sized contract jobs and Open Source work.
 
 ### Previous work
 

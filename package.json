@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"nodemon --watch src --ext md,hbs,html index.js\" \"npx netlify-cms-proxy-server\"",
-    "build": "node index.js --prod"
+    "build": "node index.js --prod",
+    "postinstall": "patch-package"
   },
   "type": "module",
   "devDependencies": {

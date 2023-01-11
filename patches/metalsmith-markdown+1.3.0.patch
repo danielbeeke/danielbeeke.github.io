@@ -1,0 +1,17 @@
+diff --git a/node_modules/metalsmith-markdown/lib/index.js b/node_modules/metalsmith-markdown/lib/index.js
+index 3cbd69c..81d4574 100644
+--- a/node_modules/metalsmith-markdown/lib/index.js
++++ b/node_modules/metalsmith-markdown/lib/index.js
+@@ -40,10 +40,10 @@ var plugin = function(options) {
+       var str = marked(data.contents.toString(), options);
+       try {
+         // preferred
+-        data.contents = Buffer.from(str);
++        data.markdown = Buffer.from(str);
+       } catch (err) {
+         // node versions < (5.10 | 6)
+-        data.contents = new Buffer(str);
++        data.markdown = new Buffer(str);
+       }
+       keys.forEach(function(key) {
+         if (data[key]) {
