@@ -44,7 +44,8 @@ Metalsmith('./')
   },
   blogs: { 
     pattern: 'blogs/*.md',
-    sortBy: 'date'
+    sortBy: 'date',
+    reverse: true
   }
 }))
 .use(assets({

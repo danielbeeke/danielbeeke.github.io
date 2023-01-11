@@ -4,7 +4,7 @@
 <body class="{{ path }}">
 <script>
 
-if (!location.hash) {
+if (!location.hash.includes('exit:')) {
   document.body.classList.add('transition-in')
 }
 else {

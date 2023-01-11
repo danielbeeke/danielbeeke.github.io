@@ -17,7 +17,8 @@
             margin-bottom: 1.5em;
         }
 
-        img, video {
+        
+        > img, > video, p > img, p > video {
             border-radius: 5px;
             display: block;
             text-align: center;
@@ -26,7 +27,7 @@
             margin-inline: auto;
         }
 
-        img {
+        > img, p > img {
             clear: both;
             max-width: 100%;
             margin-block: 4em;

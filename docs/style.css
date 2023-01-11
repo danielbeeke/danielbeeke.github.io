@@ -208,7 +208,7 @@ body.at-top .grid, body.at-top .grid-title {
   font-weight: 300;
   margin-bottom: 1.5em;
 }
-.full > .contents img, .full > .contents video {
+.full > .contents > img, .full > .contents > video, .full > .contents p > img, .full > .contents p > video {
   border-radius: 5px;
   display: block;
   text-align: center;
@@ -216,7 +216,7 @@ body.at-top .grid, body.at-top .grid-title {
   max-width: 100%;
   margin-inline: auto;
 }
-.full > .contents img {
+.full > .contents > img, .full > .contents p > img {
   clear: both;
   max-width: 100%;
   margin-block: 4em;
@@ -634,11 +634,20 @@ a.button:hover, button.button:hover, .button:hover {
 }
 
 .blogs {
+  max-width: var(--max-width);
+  width: 100%;
   margin-bottom: 200px;
+}
+
+.blog.full p:first-of-type {
+  font-size: 1.2em;
+  color: var(--accent);
 }
 
 .blog.teaser {
   text-decoration: none;
+  width: 100%;
+  display: block;
 }
 .blog.teaser .title {
   font-size: 1.7em;
@@ -646,4 +655,8 @@ a.button:hover, button.button:hover, .button:hover {
 }
 .blog.teaser .published-date {
   color: var(--accent2);
+}
+
+.blog.teaser + .blog.teaser {
+  margin-top: 2em;
 }

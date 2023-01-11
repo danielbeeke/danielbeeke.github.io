@@ -11,7 +11,7 @@
 <body class="">
 <script>
 
-if (!location.hash) {
+if (!location.hash.includes('exit:')) {
   document.body.classList.add('transition-in')
 }
 else {
@@ -150,7 +150,12 @@ if (location.pathname === '/') {
 
 
       <h2 class="grid-title">Blogs</h2>
-      <div class="blogs grid" id="blogs">
+      <div class="blogs" id="blogs">
+          <a class="blog teaser" href="blogs/new-year-more-open-source!"> 
+              <h3 class="title">New Year; More Open Source!</h3>
+              <span class="published-date">Published on 11-01-2023</span>
+              <span class="description"></span>
+          </a>
           <a class="blog teaser" href="blogs/rdf-data-and-schema-in-one"> 
               <h3 class="title">RDF; data and schema in one</h3>
               <span class="published-date">Published on 03-03-2021</span>

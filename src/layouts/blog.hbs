@@ -2,9 +2,13 @@
 
   {{#content "body"}}
     <article class="blog full">
-      <h1 class="title">{{ title }}</h1>
       <div class="contents">
+        <br>
+      <a href="/">Back to home</a>
+
+      <h1 class="title">{{ title }}</h1>
         <span>Published on {{ date }}</span>
+        <br><br>
         {{{ markdown }}}
       </div>
     </article>

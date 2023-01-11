@@ -1,7 +1,5 @@
 ---
 title: RDF; data and schema in one
-serie: Building a webapplication on top of RDF
-serie-index: 1
 date: 2021-03-03
 layout: blog.hbs
 ---

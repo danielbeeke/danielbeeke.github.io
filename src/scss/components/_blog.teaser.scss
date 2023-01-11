@@ -1,5 +1,7 @@
 .blog.teaser {
     text-decoration: none;
+    width: 100%;
+    display: block;
 
     .title {
         font-size: 1.7em;
@@ -9,4 +11,8 @@
     .published-date {
         color: var(--accent2);
     }
+}
+
+.blog.teaser + .blog.teaser {
+    margin-top: 2em;
 }

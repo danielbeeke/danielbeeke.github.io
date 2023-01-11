@@ -1,3 +1,12 @@
 .blogs {
+    max-width: var(--max-width);
+    width: 100%;
     margin-bottom: 200px;
+}
+
+.blog.full {
+    p:first-of-type {
+        font-size: 1.2em;
+        color: var(--accent);
+    }
 }
