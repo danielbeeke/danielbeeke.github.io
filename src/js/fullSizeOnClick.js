@@ -47,7 +47,7 @@ const expandElement = (element, reverse, callback) => {
             setTimeout(() => {
                 document.body.classList.remove('scroll-lock')
                 clonedElement.remove()
-            }, 300)
+            }, 200)
         }, { once: true })
 
         let { before, after } = getPositions(element, reverse)
