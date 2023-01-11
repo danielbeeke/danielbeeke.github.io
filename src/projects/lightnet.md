@@ -4,9 +4,9 @@ description: Media catalog and app publisher for Christian ministries and church
 layout: project.hbs
 link: https://library.mediaworks.global/en
 poster: https://images.unsplash.com/photo-1451187580459-43490279c0fa
-role: Developer
+role: Software Engineer in a small team
 type: Current day job
-tech: TypeScript, RDF, Deno, NodeJS, SCSS, PWA
+tech: TypeScript, RDF, Deno, NodeJS, SCSS, PWA, Docker, Infrastructure as Code
 when: 2020 till present
 index: 0
 ---

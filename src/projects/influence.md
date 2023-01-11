@@ -7,6 +7,8 @@ poster: https://images.unsplash.com/uploads/1412619540809486f481f/95ba7209
 description: How have the great thinkers influenced each other?
 tech: SPARQL, TypeScript, DBpedia.org
 type: Side project
+role: Creator
+when: 2021
 index: 4
 ---
 

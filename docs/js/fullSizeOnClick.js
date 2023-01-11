@@ -81,16 +81,27 @@ export const fullSizeOnClick = () => {
     const metaClose = document.querySelector('.meta-close')
 
     if (metaClose) {
-        metaClose.addEventListener('click', (event) => {
-            event.preventDefault()
-
+        const exit = () => {
             document.body.classList.add('scroll-lock')
             document.body.classList.add('transition-out')
 
             document.body.addEventListener('animationend', (event) => {
                 location = `/#exit:${location.pathname}`
             })
+        }
+
+        metaClose.addEventListener('click', (event) => {
+            event.preventDefault()
+            exit()
+
         }, { once: true })
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                exit()
+            }
+        });
+        
     }
 
     if (location.hash.includes('exit:')) {

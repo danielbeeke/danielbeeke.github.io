@@ -2,7 +2,15 @@
 .lists {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;    
+    gap: 40px;  
+    
+    h4 {
+        margin-top: 0;
+    }
+
+    ul {
+        margin-top: 1.5em;
+    }
 }
 
 

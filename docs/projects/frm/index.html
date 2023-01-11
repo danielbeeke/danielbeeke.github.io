@@ -90,7 +90,7 @@ if (location.pathname === '/') {
 
           <div class="item">
             <label class="label">Type</label>
-            <span class="value">Open Source Project</span>
+            <span class="value">Open Source Project / Sub project of LightNet</span>
           </div>
 
           <div class="item">
@@ -109,8 +109,15 @@ if (location.pathname === '/') {
           </div>
         </div>
   
-        <p>What if a system existed where you could use whatever piece of data and it would generate a form that could be used to edit that piece of data, or create a variant of it. With FRM that will be possible in the future. </p>
-<p>Think of FRM as a form system, an advanced one. It can have address search fields for example. It can also group together fields when needed. What makes FRM different from other form systems that it is completely detached from backend systems. It uses <a href="https://www.w3.org/TR/shacl/">SHACL</a> to define forms. You can think of SHACL as a set of validation rules for a piece of data. FRM derives the form widgets from these validations rules. You can also add specific rules that only FRM understand, such a specific widget or widget setting.</p>
+        <p>The LightNet product uses RDF for the data structure. To create and edit media it a form is needed. FRM creates forms from SHACL. SHACL is a data validation language. </p>
+<p>Steps:</p>
+<ul>
+<li>Create SHACL rules</li>
+<li>Load FRM with these SHACL rules</li>
+<li>A form is rendered that will have all the widgets for the data</li>
+<li>Add extra properties to make widget specific changes</li>
+</ul>
+<p>FRM is very modular. You can plug in your own widgets. It is also possible to plugin in your own groupings. An example of a grouping is the address field. It contains multiple fields and you can search for an address just like Google Maps and it will autocomplete.</p>
 <p><img src="/assets/frm.png" alt="FRM"></p>
 
       </div>

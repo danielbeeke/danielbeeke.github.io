@@ -7,7 +7,7 @@
       {{> introduction }}
 
 
-      <h4 class="grid-title">Projects</h4>
+      <h2 class="grid-title">Projects</h2>
       <div class="projects grid" id="projects">
         {{#each (limit collections.projects 0 4) }}
           {{> project.teaser }}
@@ -24,21 +24,21 @@
         <button class="show-more">Show more</button>
       </div>
 
-      <h4 class="grid-title">About me</h4>
+      <h2 class="grid-title">About me</h2>
       <div class="about-me block" id="about-me">
         {{#page "about"}}
           {{{ contents }}}
         {{/page}}
       </div>
 
-      <h4 class="grid-title">Open Source</h4>
-      <div class="open-source block" id="open-source">
-        {{#page "open-source"}}
+      {{#page "i-love-open-source"}}
+        <h2 class="grid-title">{{ title }}</h2>
+        <div class="open-source block" id="open-source">
           {{{ contents }}}
-        {{/page}}
-      </div>
+        </div>
+      {{/page}}
 
-      <h4 class="grid-title">Contact</h4>
+      <h2 class="grid-title">Contact</h2>
       <div class="contact block" id="contact">
         {{#page "contact"}}
           {{{ contents }}}

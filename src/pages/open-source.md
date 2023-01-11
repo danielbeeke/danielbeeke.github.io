@@ -1,12 +1,24 @@
 ---
-title: Open Source
+title: I love Open Source
 layout: page.hbs
 skip: true
 ---
 
-I am doing Open Source work in the area of RDF. I have done two bounties for [Comunica](https://comunica.dev/association/bounties/#completed). I would love to do more work in this area. If you have RDF related Open Source work and you want to sponsor me, please contact me. 
+You can sponsor me so that I can do more Open Source work. It is also possible to make known which issues you want to see solved. Contact me for requests.
 
-I am also working on some libraries that I created:
+### I am open to the following Open Source work:
+
+- RDF focused Open Source libaries
+- Maintain my own RDF focused libraries
+- Libraries in other areas (have a chat and we'll see if I could do it)
+
+<a target="_blank" href="https://liberapay.com/danielbeeke/donate">
+    <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">
+</a>
+
+<br><br>
+
+__My libraries__
 
 <div class="lists">
 
@@ -14,14 +26,18 @@ I am also working on some libraries that I created:
 
 #### SHACL Forms
 
+_Creates a form from SHACL (data validation rules)._
+
 - [FRM](https://github.com/danielbeeke/frm)
-- [RDF form](https://github.com/danielbeeke/rdf-form)
+- [RDF form](https://github.com/danielbeeke/rdf-form) _(deprecated)_
 
 </div>
 
 <div>
 
 #### SHACL related libaries
+
+_Convert SHACL data validation rules to a TypeScript type and a SPARQL query so you can fetch the objects in your TypeScript app._
 
 - [SHACL meta](https://github.com/danielbeeke/shacl-meta)
 - [SHACL meta SPARQL](https://github.com/danielbeeke/shacl-meta-sparql)
@@ -33,6 +49,8 @@ I am also working on some libraries that I created:
 
 #### BCP47 related
 
+_A language picker using the BCP47 standard for language codes._
+
 - [BCP47 Picker](https://github.com/OM-MediaWorks/bcp47-picker)
 - [Wikipedia Language labels](https://github.com/OM-MediaWorks/wikipedia-language-labels)
 
@@ -40,12 +58,3 @@ I am also working on some libraries that I created:
 
 </div>
 
-#### Sponsor
-
-Would you like to see these libraries improved? Consider sponsoring so that I have more hours available to work on these libaries.
-
-Do you have other libraries that you would like to see improved? Please contact me and we will have a chat to see if it is a match.
-
-<a target="_blank" href="https://liberapay.com/danielbeeke/donate">
-    <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">
-</a>
