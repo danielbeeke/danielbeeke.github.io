@@ -63,6 +63,10 @@ body.hash-in {
 
 a {
   color: var(--accent);
+
+  &:hover {
+    color: var(--accent);
+  }
 }
 
 ul {

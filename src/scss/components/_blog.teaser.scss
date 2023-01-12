@@ -4,15 +4,34 @@
     display: block;
 
     .title {
-        font-size: 1.7em;
-        margin: 0;
+        color: var(--accent2);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 1em;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
     }
 
     .published-date {
-        color: var(--accent2);
+        letter-spacing: 1px;
+        font-weight: 100;
+        font-size: .8em;
+        font-style: italic;
+        color: var(--text);
+        margin-bottom: 1.4em;
+        display: block;
+        }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100px;
+        transition: width .3s ease-in-out;
+        height: 2px;
+        background-color: var(--accent);
     }
 }
 
 .blog.teaser + .blog.teaser {
-    margin-top: 2em;
+    margin-top: 2.5em;
 }
