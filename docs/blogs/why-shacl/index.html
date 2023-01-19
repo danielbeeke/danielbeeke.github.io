@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daniël Beeke Why SHACL?</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body class="blogs/why-shacl">
+<script>
+
+if (!location.hash.includes('exit:')) {
+  document.body.classList.add('transition-in')
+}
+else {
+  document.body.classList.add('hash-in')
+}
+
+if (window.scrollY === 0) {
+  document.body.classList.add('at-top')
+}
+
+document.addEventListener('scroll', () => {
+  document.body.classList.remove('at-top')
+}, { once: true })
+
+if (location.pathname === '/') {
+  window.onbeforeunload = function () {
+    let scrollPos;
+    if (typeof window.pageYOffset != 'undefined') {
+      scrollPos = window.pageYOffset;
+    }
+    else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    }
+    else if (typeof document.body != 'undefined') {
+      scrollPos = document.body.scrollTop;
+    }
+    sessionStorage.scroll = scrollPos
+  }
+
+  window.onload = function () {
+    document.documentElement.scrollTop = parseInt(sessionStorage.scroll);
+    document.body.scrollTop = parseInt(sessionStorage.scroll);
+
+    const grid = document.querySelector('#projects-more')
+    const header = document.querySelector('.show-more')
+
+    if (grid && header) {
+      if (window.scrollY === 0) {
+        grid.classList.add('hidden')
+        header.innerText = 'Show more'
+      }
+      else {
+        header.innerText = 'Show less'
+      }
+    }
+
+  }
+}
+
+</script>
+    <article class="blog full">
+      <div class="contents">
+        <br>
+      <a href="/">Back to home</a>
+
+      <h1 class="title">Why SHACL?</h1>
+        <span>Published on 19-01-2023</span>
+        <br><br>
+        <p>First: what is SHACl? The following paraphrased definition comes from the official <a href="https://www.w3.org/TR/shacl/">SHACL specification</a>.</p>
+<blockquote>
+<p>SHACL Shapes Constraint Language is a language for validating RDF graphs against a set of conditions.</p>
+</blockquote>
+<p>At the moment I am developing various SHACL based libaries, a form system, a SHACL to TypeScript types library and a SHACL to SPARQL library but why and what are these exactly?</p>
+<h2 id="what-is-shacl-really">What is SHACL really?</h2>
+<h3 id="schemaless">Schemaless</h3>
+<p>When you are working with RDF data there are no database constraints in the database (which is often called a triple store). The database itself is basically one big table with three columns. These three columns are subject, predicate and object (Do you want to know more about the RDF structure itself? I wrote <a href="/blogs/rdf-data-and-schema-in-one/">previously about it</a>). It might be that that the database creates index tables under the hood. I don&#39;t know much specifics about that. But the general basic idea is, getting something out of the database is mostly joins and it does not involve constraints that are configured in a schema that lives in the database.</p>
+<h3 id="shacl-as-a-schema-that-lives-in-your-application">SHACL as a schema that lives in your application</h3>
+<p>A SHACL shape could be described as a set of rules that describe how a piece of data may look; which parts are required and how relationships may behave. Because the database is schemaless we must use these SHACL shapes in our application. A SHACL shape has a target class, meaning it applies to a certain type. So imagine, you have a form to create a person in an addressbook that is RDF based, the application can use a SHACL shape that applies to <code>schema:Person</code> to check if you have filled the required fields and also that if you reference something that it makes sense. An example of a reference could be that you entered a link to a company in the work field. If that website would be de-referenceable (meaning it has RDF data under the hood) SHACL (and your application) could check if the company also says it is of the type <code>schema:Company</code>.</p>
+<h3 id="what-makes-shacl-great">What makes SHACL great?</h3>
+<h4 id="flexible-validations">Flexible validations</h4>
+<p>SHACL is great because it has a deep integration to the data. For example, you could specify that you have a <code>schema:Product</code>, the product always has an English name and it may be translated into any other language. You can also specify that a <code>schema:colleague</code> may be a string or it must be a reference to a link that is de-referenceable and has the type <code>schema:Person</code>.</p>
+<h4 id="loose-coupling">Loose coupling</h4>
+<h5 id="backend-data-consistency-and-validation">Backend data consistency and validation</h5>
+<p>The other thing that I love, is that SHACL makes it possible to split applications into seperate components. SHACL can be used as an interface to program against. Example: The SHACL file could live in the backend and whenever something is inserted the backend checks if it has a SHACL shape for the piece of content. If it has, it validates against it, if not it will reject. </p>
+<h5 id="structure-introspection-and-validation-for-frontend-forms">Structure introspection and validation for frontend forms</h5>
+<p>That same SHACL shape can be used to show a form in the administrative interface to add pieces of contents. The SHACL rules are read and widgets are shown for each field. When the user changes anything the data is validated and errors are shown and when everything validates, then it is send to the backend, and as explained before, the backend does its own validation with the same SHACL shape.</p>
+<h5 id="server-driven-ui-tooling">Server driven UI tooling</h5>
+<p>You can also use the SHACL shape to create a configuration screen for server driven UI. Meaning when you known which fields a piece of content has you can show ways of configuring these, how the look and where they are placed when they are displayed in a website or application.</p>
+<h4 id="so-i-gave-three-examples">So I gave three examples:</h4>
+<ul>
+<li>Backend data consistency and validation</li>
+<li>Structure introspection and validation for frontend forms</li>
+<li>Server driven UI tooling</li>
+</ul>
+<p>The really cool thing is that you can have these three applications separated into components that do not touch eachother.</p>
+<h3 id="comparision-to-sql-based-application-such-as-drupal">Comparision to SQL based application such as Drupal</h3>
+<p>How does this compare to a SQL based application? Drupal has some similarities, they created their own form API. The Drupal form api has understanding of the Drupal entity API which defines the fields on content types. The difference, SHACL is a W3 based standard, with well tested libraries available. Drupal had to make all these form and entity definition systems themselves. Which are quite wonderful, don&#39;t get me wrong. But it is not standardized.</p>
+<p>The other thing in Drupal is that the entity schema is tight coupled to the database, there is migration code to keep the SQL schema in sync with the entity definitions. </p>
+<p>Most importantly, data that lives in a SQL database of Drupal application is not easily interoperatable. It is purely meant for that one Drupal application and more specifically the database schema. </p>
+<h4 id="rdf-data-migrations">RDF data migrations</h4>
+<p>Of course with RDF you still need something to migrate data. If you have a person with <code>ex:firstName</code> and you want to change that to <code>schema:givenName</code> you can do a migration where you duplicate data. You adjust your application to allow for <code>schema:givenName</code>. When all functions as expected you check the data for changes and when all looks good you can delete the old <code>ex:firstName</code>.</p>
+<h3 id="summary">Summary</h3>
+<p>I hope you found it interesting to read about SHACL and how it can help you create seperated applications that use SHACL as an interface to comunicate about the data structures that flow through further unrelated the applications.</p>
+
+      </div>
+    </article>
+
+  <script src="/js/App.js" type="module"></script>
+</body>
+</html>

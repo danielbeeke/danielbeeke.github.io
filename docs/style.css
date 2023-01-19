@@ -137,6 +137,11 @@ pre {
   line-height: 1.6em;
 }
 
+h5 {
+  font-size: 1.4em;
+  line-height: 1.8em;
+}
+
 .menu {
   display: none;
 }
