@@ -5,7 +5,7 @@ layout: blog.hbs
 poster: https://images.unsplash.com/photo-1453733190371-0a9bedd82893
 ---
 
-First: what is SHACl? The following paraphrased definition comes from the official [SHACL specification](https://www.w3.org/TR/shacl/).
+First: what is SHACL? The following paraphrased definition comes from the official [SHACL specification](https://www.w3.org/TR/shacl/).
 
 > SHACL Shapes Constraint Language is a language for validating RDF graphs against a set of conditions.
 
