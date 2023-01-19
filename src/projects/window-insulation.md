@@ -1,7 +1,7 @@
 ---
 title: Window insulation
 layout: project.hbs
-poster: https://danielbeeke.nl/images/showcase-background-big/kozijnisolatie.jpg
+poster: https://danielbeeke.nl/assets/kozijnisolatie.jpg
 description: Calculation tool for carpentry shops
 type: With Fonkel and Graphius
 tech: JavaScript, Google Sheets, Redux, uHTML, RemoteStorage

@@ -2,13 +2,15 @@
 
   {{#content "body"}}
     <article class="blog full">
+
+      <img class="background" src="//images.weserv.nl/?url={{ poster }}&w=1200&h=300&fit=cover&a=attention" />
+
       <div class="contents">
         <br>
       <a href="/">Back to home</a>
 
       <h1 class="title">{{ title }}</h1>
-        <span>Published on {{ date }}</span>
-        <br><br>
+        <span class="published-on">Published on {{ date }}</span>
         {{{ markdown }}}
       </div>
     </article>

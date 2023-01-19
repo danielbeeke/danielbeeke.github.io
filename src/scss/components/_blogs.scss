@@ -9,4 +9,16 @@
         font-size: 1.2em;
         color: var(--accent);
     }
+
+    .background {
+        width: 100vw;
+        margin-bottom: 1em;
+        opacity: .2;
+        pointer-events: none;
+    }
+
+    .published-on {
+        display: block;
+        margin-bottom: 3em;
+    }
 }

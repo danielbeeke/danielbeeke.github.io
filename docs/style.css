@@ -651,6 +651,16 @@ a.button:hover, button.button:hover, .button:hover {
   font-size: 1.2em;
   color: var(--accent);
 }
+.blog.full .background {
+  width: 100vw;
+  margin-bottom: 1em;
+  opacity: 0.2;
+  pointer-events: none;
+}
+.blog.full .published-on {
+  display: block;
+  margin-bottom: 3em;
+}
 
 .blog.teaser {
   text-decoration: none;

@@ -2,6 +2,7 @@
 title: RDF; data and schema in one
 date: 2021-03-03
 layout: blog.hbs
+poster: https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8
 ---
 
 ### A thought exercise:

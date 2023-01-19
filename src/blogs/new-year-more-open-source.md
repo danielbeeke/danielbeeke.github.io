@@ -2,6 +2,7 @@
 title: New Year; More Open Source
 date: 2023-01-11
 layout: blog.hbs
+poster: https://images.unsplash.com/photo-1467810563316-b5476525c0f9
 ---
 
 The best whishes for you in this new year! I hope to do more Open Source work in 2023. I have set up an account on LiberaPay so that people can sponsor me.
