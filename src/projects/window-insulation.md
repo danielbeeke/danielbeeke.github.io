@@ -4,7 +4,7 @@ layout: project.hbs
 poster: https://danielbeeke.nl/assets/kozijnisolatie.jpg
 description: Calculation tool for carpentry shops
 type: With Fonkel and Graphius
-tech: JavaScript, Google Sheets, Redux, uHTML, RemoteStorage
+tech: JavaScript, Vue
 role: Developer
 index: 8
 ---
